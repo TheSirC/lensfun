@@ -19,7 +19,7 @@ jobs:
     - name: Build preparation
       run: mkdir build
     - name: CMake execution
-      run: cmake -S . -B build
+      run: cmake -S . -B build -DCMAKE_INSTALL_PREFIX=../local
     - name: Make execution
       run: cd build && make
     - name: Install distcheck
