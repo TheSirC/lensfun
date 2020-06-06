@@ -1,0 +1,22 @@
+name: Build execution
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: [ubuntu-latest macos-latest]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build preparation
+      run: mkdir build && cd build
+    - name: CMake execution
+      run: cmake ../
+    - name: Make execution
+      run: make
+    - name: Install distcheck
+      run: make install
