@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build preparation
-      run: mkdir build local
+      run: mkdir build && mkdir local
     - name: CMake execution
       run: cmake -S . -B build -DCMAKE_INSTALL_PREFIX=../local
     - name: Make execution
