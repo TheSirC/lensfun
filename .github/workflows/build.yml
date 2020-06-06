@@ -19,7 +19,7 @@ jobs:
     - name: Build preparation
       run: mkdir build && cd build
     - name: CMake execution
-      run: cmake ../
+      run: cmake ..
     - name: Make execution
       run: make
     - name: Install distcheck
