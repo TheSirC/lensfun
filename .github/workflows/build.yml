@@ -8,8 +8,12 @@ on:
 
 jobs:
   build:
-
-    runs-on: [ubuntu-latest, macos-latest]
+    strategy:
+      fail-fast: false
+      matrix:
+            runs-on: [macOS-latest, ubuntu-latest, windows-latest]
+    name: ${{ matrix.runs-on }}
+    runs-on: ${{ matrix.runs-on }}
     steps:
     - uses: actions/checkout@v2
     - name: Build preparation
