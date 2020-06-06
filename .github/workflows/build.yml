@@ -17,9 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build preparation
-      run: mkdir build && cd build
+      run: mkdir build
     - name: CMake execution
-      run: cmake --build cmake_build_dir --target INSTALL
+      run: cmake -S . -B build
     - name: Make execution
       run: make
     - name: Install distcheck
